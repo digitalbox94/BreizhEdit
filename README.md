@@ -19,7 +19,13 @@ The below functionalities are available :<br>
 
 # Screenshot
 
-![Alt text](./docs/images/breizhedit_mainwindow.png?raw=true "Title")
+Main window :<br><br>
+![Main window](./docs/images/breizhedit_mainwindow.png?raw=true "Main Window")
+<br><br><br>
+
+Text with colored keywords:<br><br>
+![Colored keywords](./docs/images/breizhedit_mainwindow.png?raw=true "Colored keywords")
+<br><br><br>
 
 
 # Build from source
