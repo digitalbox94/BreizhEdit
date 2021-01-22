@@ -19,7 +19,8 @@ The below functionalities are available :<br>
 
 # Screenshot
 
-!(./docs/images/breizhedit_mainwindow.png)
+![Alt text](./docs/images/breizhedit_mainwindow.png?raw=true "Title")
+
 
 # Build from source
 
