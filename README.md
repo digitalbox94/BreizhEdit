@@ -1,5 +1,6 @@
 # BreizhEdit
-BreizhEdit is an efficient text editor written with the Qt framework :)
+BreizhEdit is an efficient text editor written with the Qt framework.<br>
+It has been successfully tested on MacOS Catalina, Ubuntu 20, Windows10 and RaspberryPiOS.
 
 
 # Features
@@ -19,24 +20,24 @@ The below functionalities are available :<br>
 
 # Screenshot
 
-Main window :<br>
+<b>Main window :</b><br><br>
 ![Main window](./docs/images/breizhedit_mainwindow.png?raw=true "Main Window")
 <br><br><br>
 
-Text with colored keywords:<br>
+<b>Text with colored keywords:</b><br><br>
 ![Colored keywords](./docs/images/breizhedit_highlighter.png?raw=true "Colored keywords")
 <br><br><br>
 
-Search dialog :<br>
+<b>Search dialog :</b><br><br>
 ![Search](./docs/images/breizhedit_search.png?raw=true "Search")
 <br><br><br>
 
-Go to line dialog :<br>
+<b>Go to line dialog :</b><br><br>
 ![Go to line](./docs/images/breizhedit_gotoline.png?raw=true "Go to line")
 <br><br><br>
 
 
-Zoom/Unzoom :<br>
+<b>Zoom/Unzoom :</b><br><br>
 ![Zoom](./docs/images/breizhedit_zoom.png?raw=true "Zoom")
 <br><br><br>
 
@@ -48,12 +49,13 @@ Quick commands display :<br>
 
 # Limitations
 
-Single window display<br><br>
+- Single window display<br><br>
+- Distribution for RaspberryPiOS and Ubuntu to improve<br><br>
 
 
 # Build from source
 
-Open the BreizhEdit.pro file inside Qt Creator and compile it. <br>
+Open the BreizhEdit.pro file inside Qt Creator and compile it. <br><br>
 Alternative : compile with the "qmake" tool. <br>
 
 
