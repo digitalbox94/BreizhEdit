@@ -19,7 +19,7 @@ The below functionalities are available :<br>
 
 # Screenshot
 
-!(/docs/images/breizhedit_mainwindow.png)
+!(./docs/images/breizhedit_mainwindow.png)
 
 # Build from source
 
