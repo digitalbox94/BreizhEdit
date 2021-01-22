@@ -3,6 +3,8 @@ BreizhEdit is an efficient text editor written with the Qt framework :)
 
 
 # Features
+
+The below functionalities are available :<br>
 - New / Open / Save / SaveAs / Print file
 - Cut / Copy / Paste texte 
 - Undo function 
@@ -15,6 +17,9 @@ BreizhEdit is an efficient text editor written with the Qt framework :)
 - Text displayed with colored keywords
 - Status bar for general information 
 
+# Screenshot
+
+!(/docs/images/breizhedit_mainwindow.png)
 
 # Build from source
 
