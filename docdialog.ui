@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>UIDocDialog</class>
+ <widget class="QDialog" name="UIDocDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>622</width>
+    <height>308</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="labelImage">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>-20</y>
+     <width>311</width>
+     <height>361</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="images.qrc">:/images/documentation.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushOk">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>270</y>
+     <width>191</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Understood!</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelDocumentation">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>30</y>
+     <width>251</width>
+     <height>231</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="images.qrc"/>
+ </resources>
+ <connections/>
+</ui>
