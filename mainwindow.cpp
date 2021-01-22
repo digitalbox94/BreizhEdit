@@ -544,7 +544,7 @@ void MainWindow::showAbout()
     aboutDialog->labelText->setTextFormat(Qt::RichText);
     aboutDialog->labelText->setText(tr("<b>BreizhEdit</b><br><i>'Text Your Life!'</i><br><br>"
                         "Modern GUI application using Qt<br><br>"
-                        "Home : <a href=\"https://github.com/digitalbox94\" style=\"color: rgb(232,112,45);\">https://github.com/digitalbox94</a><br><br>"
+                        "Home : <a href=\"https://github.com/digitalbox94/BreizhEdit/\" style=\"color: rgb(232,112,45);\">https://github.com/digitalbox94</a><br><br>"
                         "© 2020 DigitalBox"
                      ));
 
