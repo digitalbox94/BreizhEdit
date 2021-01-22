@@ -19,13 +19,36 @@ The below functionalities are available :<br>
 
 # Screenshot
 
-Main window :<br><br>
+Main window :<br>
 ![Main window](./docs/images/breizhedit_mainwindow.png?raw=true "Main Window")
 <br><br><br>
 
-Text with colored keywords:<br><br>
-![Colored keywords](./docs/images/breizhedit_mainwindow.png?raw=true "Colored keywords")
+Text with colored keywords:<br>
+![Colored keywords](./docs/images/breizhedit_highlighter.png?raw=true "Colored keywords")
 <br><br><br>
+
+Search dialog :<br>
+![Search](./docs/images/breizhedit_search.png?raw=true "Search")
+<br><br><br>
+
+Go to line dialog :<br>
+![Go to line](./docs/images/breizhedit_gotoline.png?raw=true "Go to line")
+<br><br><br>
+
+
+Zoom/Unzoom :<br>
+![Zoom](./docs/images/breizhedit_zoom.png?raw=true "Zoom")
+<br><br><br>
+
+
+Quick commands display :<br>
+![Commands](./docs/images/breizhedit_commands.png?raw=true "Commands")
+<br><br><br>
+
+
+# Limitations
+
+Single window display<br><br>
 
 
 # Build from source
