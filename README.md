@@ -56,6 +56,10 @@ Quick commands display :<br>
 # Build from source
 
 Open the BreizhEdit.pro file inside Qt Creator and compile it. <br><br>
-Alternative : compile with the "qmake" tool. <br>
+Alternative solution is to compile with the "qmake" tool: <br>
+cd ./project<br>
+qmake<br>
+make<br>
+
 
 
