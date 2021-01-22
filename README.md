@@ -18,7 +18,7 @@ BreizhEdit is an efficient text editor written with the Qt framework :)
 
 # Build from source
 
-Open the BreizhEdit.pro file inside Qt Creator and compile it.
-Alternative : compile with the "qmake" tool.
+Open the BreizhEdit.pro file inside Qt Creator and compile it. <br>
+Alternative : compile with the "qmake" tool. <br>
 
 
