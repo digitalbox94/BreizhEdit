@@ -1,0 +1,24 @@
+BreizhEdit installation instructions 
+====================================
+
+- MacOS : 
+	Execute file "BreizhEdit-MacOS-Catalina.dmg" and copy BreizhEdit bundle into your "Applications" folder.
+	If required, indicate in the Security preferences to allow the program's execution.
+
+- Windows 10 : 
+	Unzip file "BreizhEdit-Win10.zip and copy the "BreizhEdit" folder into the desired directory.
+	
+- RaspberryPi OS :
+	Unzip file "BreizhEdit-RaspberryPiOS.zip" and copy "BreizhEdit" folder into "/home/pi/Applications/".
+	Copy "BreizhEdit.desktop" into the "/home/pi/.local/share/applications/".
+	
+- Ubuntu 20 :
+	Unzip file "BreizhEdit-Ubuntu20.zip" and copy the "BreizhEdit" folder into the desired directory.
+	Modify Icon and Exec section in the "BreizhEdit.desktop" file depending on your installation folder.
+	Copy "BreizhEdit.desktop" into the "/home/pi/.local/share/applications/"
+	
+Enjoy this crossplarform text editor :)
+
+
+	
+	
