@@ -62,4 +62,10 @@ qmake<br>
 make<br>
 
 
+# Download
+
+You can download BreizhEdit for each platform in the <a href="https://github.com/digitalbox94/BreizhEdit/releases/tag/v1.0">Release section</a><br><br>
+Enjoy :)
+
+
 
