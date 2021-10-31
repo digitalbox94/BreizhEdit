@@ -79,7 +79,7 @@ void CustomTextEdit::wheelEvent(QWheelEvent *inEvent)
         QFont font = QFont(this->font());
 
         // Are we scrolling up or down?
-        short direction = (inEvent->delta() > 0 ? SCROLL_INTERVAL : -1 * SCROLL_INTERVAL);
+        short direction = (inEvent->angleDelta().y() > 0 ? SCROLL_INTERVAL : -1 * SCROLL_INTERVAL);
 
         // Set the new font size
         int new_size = font.pointSize() + direction;

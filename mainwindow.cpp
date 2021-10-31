@@ -243,7 +243,7 @@ void MainWindow:: readSettings()
     const QByteArray geometry = settings.value("geometry", QByteArray()).toByteArray();
     if (geometry.isEmpty())
     {
-        const QRect availableGeometry = QApplication::desktop()->availableGeometry(this);
+        const QRect availableGeometry = QApplication::primaryScreen()->availableGeometry();
         resize(availableGeometry.width() / 3, availableGeometry.height() / 2);
         move((availableGeometry.width() - width()) / 2,
              (availableGeometry.height() - height()) / 2);
@@ -439,7 +439,7 @@ void MainWindow::fileWrite(const QString &fileName)
 void MainWindow::fileSaveAs()
 {
     QString fileName = QFileDialog::getSaveFileName(this, "Select filename");
-    if (fileName != NULL)
+    if (! fileName.isNull())
     {
       fileWrite(fileName);
     }
