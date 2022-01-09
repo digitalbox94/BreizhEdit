@@ -9,7 +9,7 @@ The below functionalities are available :<br>
 - New / Open / Save / SaveAs / Print file
 - Cut / Copy / Paste texte 
 - Undo function 
-- Search for a string (forward/backward)
+- Search for a string (forward/backward) with Replace
 - Go to a line number
 - Display line numbers
 - Highlight current line
