@@ -105,6 +105,8 @@ void MainWindow::performConnections()
     connect(ui->textEdit, SIGNAL(cursorPositionChanged()), this, SLOT(showCursorPosition()));
 
     connect(searchDialog->pushCancel, SIGNAL(clicked()), searchDialog, SLOT(hide()));
+    connect(searchDialog->pushReplace, SIGNAL(clicked()), this, SLOT(replaceString()));
+    connect(searchDialog->pushFindReplace, SIGNAL(clicked()), this, SLOT(findReplaceString()));
     connect(searchDialog->pushNext, SIGNAL(clicked()), this, SLOT(findString()));
     connect(searchDialog->pushPrevious, SIGNAL(clicked()), this, SLOT(findStringBackward()));
 
@@ -134,11 +136,11 @@ void MainWindow::additionalSetupUi()
 
     // About Dialog
     aboutDialog = new AboutDialog();
-    aboutDialog->setWindowTitle("Info");
+    aboutDialog->setWindowTitle("About BreizhEdit");
 
     // Documentation Dialog
     docDialog = new DocumentationDialog();
-    docDialog->setWindowTitle("Documentation");
+    docDialog->setWindowTitle("Commands");
 
     QFont font("Menlo", 12);
     ui->textEdit->setFont(font);
@@ -212,7 +214,7 @@ bool MainWindow::confirmAction()
         return true;
 
     // Document modified : confirm the action by user
-    reply = QMessageBox::warning(this, "Warning", "The document has not been saved.\n\nAre you sure you want to proceed ?",
+    reply = QMessageBox::warning(this, "Warning", "The document has not been saved.\n\nAre you sure you want to proceed without saving ?",
                                   QMessageBox::Yes|QMessageBox::No);
     // Ok confirmed
     if (reply == QMessageBox::Yes)
@@ -268,15 +270,66 @@ void MainWindow::editSearch()
     }
 
     searchDialog->lineEdit->setFocus();
+    searchDialog->labelStatus->setText("");
     searchDialog->show();
 }
+
+
+/**
+ * @brief MainWindow::replaceString
+ */
+void MainWindow::replaceString()
+{
+    if (lastSearch == true)
+    {
+      ui->textEdit->textCursor().insertText(searchDialog->lineEditReplace->text());
+      if (ui->textEdit->find(searchDialog->lineEdit->text()))
+      {
+          lastSearch = true;
+      }
+      else
+      {
+          lastSearch = false;
+      }
+    }
+    else
+    {
+        searchDialog->labelStatus->setText("No text to replace");
+    }
+}
+
+/**
+ * @brief MainWindow::findReplaceString
+ */
+void MainWindow::findReplaceString()
+{
+    if (ui->textEdit->find(searchDialog->lineEdit->text()))
+    {
+        searchDialog->labelStatus->setText("");
+        ui->textEdit->textCursor().insertText(searchDialog->lineEditReplace->text());
+    }
+    else
+    {
+        searchDialog->labelStatus->setText("Text not found");
+    }
+}
+
 
 /**
  * @brief MainWindow::findString
  */
 void MainWindow::findString()
 {
-    ui->textEdit->find(searchDialog->lineEdit->text());
+    if (ui->textEdit->find(searchDialog->lineEdit->text()))
+    {
+        searchDialog->labelStatus->setText("");
+        lastSearch = true;
+    }
+    else
+    {
+        searchDialog->labelStatus->setText("Text not found");
+        lastSearch = false;
+    }
 }
 
 
@@ -286,7 +339,16 @@ void MainWindow::findString()
 void MainWindow::findStringBackward()
 {
     QTextDocument::FindFlags flag = QTextDocument::FindBackward;
-    ui->textEdit->find(searchDialog->lineEdit->text(), flag);
+    if (ui->textEdit->find(searchDialog->lineEdit->text(), flag))
+    {
+        searchDialog->labelStatus->setText("");
+        lastSearch = true;
+    }
+    else
+    {
+        searchDialog->labelStatus->setText("Text not found");
+        lastSearch = false;
+    }
 }
 
 
@@ -362,6 +424,9 @@ void MainWindow::viewDecrease()
  */
 void MainWindow::showCursorPosition()
 {
+    // as cursor position changed, the last search is no more true
+    lastSearch = false;
+
     int line = ui->textEdit->textCursor().blockNumber()+1;
     int pos = ui->textEdit->textCursor().columnNumber()+1;
     statusBar()->showMessage(QString("Line %1:%2").arg(line).arg(pos));
@@ -508,6 +573,8 @@ void MainWindow::editJumpTo()
         jumpDialog->setWindowTitle("Jump To");
     }
 
+    jumpDialog->labelStatus->setText("");
+    jumpDialog->lineNo->setText("");
     jumpDialog->lineNo->setFocus();
     jumpDialog->show();
 }
@@ -525,6 +592,10 @@ void MainWindow::findLine()
         ui->textEdit->setTextCursor(cursor);
         jumpDialog->hide();
     }
+    else
+    {
+        jumpDialog->labelStatus->setText("Line not found");
+    }
 }
 
 
@@ -539,15 +610,17 @@ void MainWindow::showAbout()
         aboutDialog->setWindowTitle("Info");
     }
 
+    QString aboutText = QString("<b>BreizhEdit ")
+            + QString(EDITOR_VERSION)
+            + QString("</b><br><i>'Text Your Life!'</i><br><br>")
+            + QString("Modern GUI application using Qt<br><br>")
+            + QString("Home : <a href=\"https://github.com/digitalbox94/BreizhEdit/\" style=\"color: rgb(232,112,45);\">https://github.com/digitalbox94</a><br><br>")
+            + QString("© 2020 DigitalBox");
+
     aboutDialog->setStyleSheet("QWidget{min-width:100px; color:white; background-color:rgb(40,40,40);}");
     aboutDialog->setFont(QFont("Menlo", 12));
     aboutDialog->labelText->setTextFormat(Qt::RichText);
-    aboutDialog->labelText->setText(tr("<b>BreizhEdit</b><br><i>'Text Your Life!'</i><br><br>"
-                        "Modern GUI application using Qt<br><br>"
-                        "Home : <a href=\"https://github.com/digitalbox94/BreizhEdit/\" style=\"color: rgb(232,112,45);\">https://github.com/digitalbox94</a><br><br>"
-                        "© 2020 DigitalBox"
-                     ));
-
+    aboutDialog->labelText->setText(aboutText);
 
     aboutDialog->pushOk->setFocus();
     aboutDialog->show();
@@ -569,8 +642,8 @@ void MainWindow::showDocumentation()
     docDialog->setStyleSheet("QWidget{min-width:100px; color:white; background-color:rgb(38,39,43);}");
     docDialog->setFont(QFont("Menlo", 12));
     docDialog->labelDocumentation->setTextFormat(Qt::RichText);
-    docDialog->labelDocumentation->setText((tr("<b><u>Useful Commands</u></b><br><br>"
-                                      "Cmd + F : find text<br>"
+    docDialog->labelDocumentation->setText((tr("<b><u>Commands</u></b><br><br>"
+                                      "Cmd + F : find & replace text<br>"
                                       "Cmd + G : go to line<br>"
                                       "Cmd + Scroll Up : zoom view<br>"
                                       "Cmd + Scroll Down : unzoom view<br>"

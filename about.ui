@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>567</width>
-    <height>239</height>
+    <height>321</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,9 +16,9 @@
   <widget class="QLabel" name="labelLogo">
    <property name="geometry">
     <rect>
-     <x>-10</x>
-     <y>-10</y>
-     <width>211</width>
+     <x>-20</x>
+     <y>0</y>
+     <width>221</width>
      <height>351</height>
     </rect>
    </property>
@@ -33,7 +33,7 @@
    <property name="geometry">
     <rect>
      <x>320</x>
-     <y>190</y>
+     <y>260</y>
      <width>131</width>
      <height>32</height>
     </rect>
@@ -48,7 +48,7 @@
      <x>220</x>
      <y>40</y>
      <width>321</width>
-     <height>131</height>
+     <height>171</height>
     </rect>
    </property>
    <property name="text">

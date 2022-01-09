@@ -7,13 +7,13 @@
     <x>0</x>
     <y>0</y>
     <width>243</width>
-    <height>106</height>
+    <height>137</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -35,12 +35,12 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>60</y>
-     <width>142</width>
+     <x>30</x>
+     <y>90</y>
+     <width>181</width>
      <height>32</height>
     </rect>
    </property>
@@ -56,6 +56,25 @@
      <widget class="QPushButton" name="pushOk">
       <property name="text">
        <string>Ok</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>50</y>
+     <width>181</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_3">
+    <item>
+     <widget class="QLabel" name="labelStatus">
+      <property name="text">
+       <string/>
       </property>
      </widget>
     </item>

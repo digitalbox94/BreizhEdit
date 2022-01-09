@@ -19,6 +19,8 @@
 #include "aboutdialog.h"
 #include "documentationdialog.h"
 
+#define EDITOR_VERSION "v1.1"
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -46,6 +48,8 @@ private slots:
     void filePrint();
     void fileQuit();
     void editSearch();
+    void replaceString();
+    void findReplaceString();
     void findString();
     void findStringBackward();
     void editJumpTo();
@@ -92,5 +96,8 @@ private:
 
     // Documentation dialog
     DocumentationDialog *docDialog = NULL;
+
+    // Last search indicator
+    bool lastSearch = false;
 };
 #endif // MAINWINDOW_H
