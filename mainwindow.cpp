@@ -149,6 +149,8 @@ void MainWindow::additionalSetupUi()
     QPalette p = ui->textEdit->palette();
     p.setColor(QPalette::Base, QColor(40, 40, 40, 255));
     p.setColor(QPalette::Text, QColor(255, 255, 255, 255));
+    p.setColor(QPalette::Highlight, QColor(120, 120, 0, 255));
+
     ui->textEdit->setPalette(p);
 
     ui->textEdit->setWordWrapMode(QTextOption::NoWrap);

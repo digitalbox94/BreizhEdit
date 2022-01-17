@@ -115,7 +115,7 @@ int CustomTextEdit::lineNumberAreaWidth()
         ++digits;
     }
 
-    int space = 3 + fontMetrics().horizontalAdvance(QLatin1Char('9')) * digits;
+    int space = 3 + fontMetrics().horizontalAdvance(QLatin1Char('9')) * (digits + 2);
 
     return space;
 }
@@ -170,13 +170,14 @@ void CustomTextEdit::lineNumberAreaPaintEvent(QPaintEvent *event)
     int blockNumber = block.blockNumber();
     int top = (int) blockBoundingGeometry(block).translated(contentOffset()).top();
     int bottom = top + (int) blockBoundingRect(block).height();
+    int offset = fontMetrics().horizontalAdvance(QLatin1Char('9'));
 
     while (block.isValid() && top <= event->rect().bottom())
     {
         if (block.isVisible() && bottom >= event->rect().top()) {
             QString number = QString::number(blockNumber + 1);
             painter.setPen(Qt::lightGray);
-            painter.drawText(0, top, m_lineNumberArea->width(), fontMetrics().height(),
+            painter.drawText(0-offset, top, m_lineNumberArea->width(), fontMetrics().height(),
                              Qt::AlignRight, number);
         }
 

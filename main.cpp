@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 
     QCoreApplication::setOrganizationName("DigitalBox");
     QCoreApplication::setApplicationName("BreizhEdit");
-    QCoreApplication::setApplicationVersion("1.0");
+    QCoreApplication::setApplicationVersion(EDITOR_VERSION);
 
     // Define command line options and arguments
     QCommandLineParser parser;
